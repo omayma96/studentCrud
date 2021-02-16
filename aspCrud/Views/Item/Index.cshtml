@@ -1,0 +1,58 @@
+﻿@model IEnumerable<aspCrud.Models.Item>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Student - Crud</h1>
+
+<p>
+    <a asp-action="Create"> New One</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            @*<th>
+                    @Html.DisplayNameFor(model => model.id)
+                </th>*@
+            <th>
+                @Html.DisplayNameFor(model => model.nom)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.prenom)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.cin)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.adress)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+               
+                <td>
+                    @Html.DisplayFor(modelItem => item.nom)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.prenom)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.cin)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.adress)
+                </td>
+                <td>
+                    @Html.ActionLink("Update", "Update", new { id = item.id }, new { @class = "btn btn-primary" })
+                    @Html.ActionLink("Read", "Read", new { id = item.id }, new { @class = "btn btn-success" })
+                    @Html.ActionLink("Delete", "Delete", new { id = item.id }, new { @class = "btn btn-danger" })
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

@@ -1,0 +1,53 @@
+﻿@model aspCrud.Models.Item
+
+@{
+    ViewData["Title"] = "Update";
+}
+
+<h1>Update</h1>
+
+<h4>Student Info</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Update">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="id" class="control-label"></label>
+                <input asp-for="id" class="form-control" readonly />
+                <span asp-validation-for="id" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="nom" class="control-label"></label>
+                <input asp-for="nom" class="form-control" />
+                <span asp-validation-for="nom" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="prenom" class="control-label"></label>
+                <input asp-for="prenom" class="form-control" />
+                <span asp-validation-for="prenom" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="cin" class="control-label"></label>
+                <input asp-for="cin" class="form-control" />
+                <span asp-validation-for="cin" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="adress" class="control-label"></label>
+                <input asp-for="adress" class="form-control" />
+                <span asp-validation-for="adress" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Retour</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
